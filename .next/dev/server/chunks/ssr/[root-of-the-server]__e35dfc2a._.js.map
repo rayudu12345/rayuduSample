@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/macsho/Rayudu/Projects/sample-login/src/app/page.tsx"],"sourcesContent":["import Link from 'next/link';\n\nconst HomePage = () => {\n    return (\n        <div>\n            <h1>Welcome to Sample Login</h1>\n            <Link href=\"/login\">Go to Login</Link>\n        </div>\n    );\n};\n\nexport default HomePage;"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,WAAW;IACb,qBACI,8OAAC;;0BACG,8OAAC;0BAAG;;;;;;0BACJ,8OAAC,0LAAI;gBAAC,MAAK;0BAAS;;;;;;;;;;;;AAGhC;uCAEe"}}]
+}

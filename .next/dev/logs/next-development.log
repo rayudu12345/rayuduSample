@@ -1,0 +1,6 @@
+[00:00:01.279] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.487] Server  LOG     ✓ Ready in 973ms
+[00:01:09.864] Server  LOG     ✓ Compiled in 54ms
+[00:01:18.605] Server  LOG     [2025-12-29T14:22:39.104Z] POST /api/auth/login
+[00:01:19.083] Server  LOG     [Auth] Login attempt for: rayudu@travash.com
+[00:01:58.115] Server  LOG     [Auth] Login successful for: rayudu@travash.com
