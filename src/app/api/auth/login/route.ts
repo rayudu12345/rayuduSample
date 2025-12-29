@@ -20,16 +20,32 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify(body),
+      cache: 'no-store',
     });
 
-    const data = await response.json();
+    console.log(`[Auth] External API response status: ${response.status}`);
+
+    let data;
+    const contentType = response.headers.get('content-type');
+    
+    if (contentType && contentType.includes('application/json')) {
+      data = await response.json();
+    } else {
+      const text = await response.text();
+      console.error(`[Auth] Non-JSON response: ${text}`);
+      return NextResponse.json(
+        { error: 'Invalid response from authentication server' },
+        { status: 502 }
+      );
+    }
 
     if (!response.ok) {
-      console.error(`[Auth] Login failed for ${body.email}: ${data.message}`);
+      console.error(`[Auth] Login failed for ${body.email}:`, data);
       return NextResponse.json(
-        { error: data.message || 'Login failed' },
+        { error: data.message || data.error || 'Login failed' },
         { status: response.status }
       );
     }
@@ -45,14 +61,24 @@ export async function POST(request: NextRequest) {
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
         maxAge: 3600, // 1 hour
+        path: '/',
       });
     }
 
     return res;
-  } catch (error) {
+  } catch (error: any) {
     console.error('[Auth] Proxy API error:', error);
+    console.error('[Auth] Error details:', {
+      message: error?.message,
+      stack: error?.stack,
+      cause: error?.cause,
+    });
+    
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { 
+        error: 'Internal server error',
+        details: process.env.NODE_ENV === 'development' ? error?.message : undefined
+      },
       { status: 500 }
     );
   }
