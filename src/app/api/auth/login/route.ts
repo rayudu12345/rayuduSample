@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
     if (data.token) {
       res.cookies.set('authToken', data.token, {
         httpOnly: true,
-        // secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        secure: true, // Always use secure cookies
+        sameSite: 'lax', // Changed from 'strict' for better compatibility
         maxAge: 3600, // 1 hour
         path: '/',
       });
