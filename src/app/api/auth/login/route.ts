@@ -21,6 +21,9 @@ export async function POST(request: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept-Language': 'en-IN,en;q=0.9',
+        'Origin': 'https://rayudu-sample.vercel.app',
       },
       body: JSON.stringify(body),
       cache: 'no-store',
