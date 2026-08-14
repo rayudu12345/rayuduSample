@@ -1,6 +1,39 @@
-[00:00:01.279] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.487] Server  LOG     ✓ Ready in 973ms
-[00:01:09.864] Server  LOG     ✓ Compiled in 54ms
-[00:01:18.605] Server  LOG     [2025-12-29T14:22:39.104Z] POST /api/auth/login
-[00:01:19.083] Server  LOG     [Auth] Login attempt for: rayudu@travash.com
-[00:01:58.115] Server  LOG     [Auth] Login successful for: rayudu@travash.com
+[00:00:00.776] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.845] Server  LOG     ✓ Ready in 610ms
+[00:00:09.136] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+-                           data-new-gr-c-s-check-loaded="14.1320.0"
+-                           data-gr-ext-installed=""
+-                           data-gr-ext-go-mode=""
+-                           data-gr-aaa-loaded="14.1320.0"
+-                           data-gr-aaa-notch-connection-id="1786733222399-0.709324832680912"
+                          >
+                  ...
+
+[00:00:51.027] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
