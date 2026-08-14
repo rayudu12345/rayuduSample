@@ -13,7 +13,7 @@ export default function RootLayout({
         </header>
         <main>{children}</main>
         <footer>
-          <p>&copy; 2023 Sample Login. All rights reserved.</p>
+          <p>&copy; 2026 Sample Login. All rights reserved.</p>
         </footer>
       </body>
     </html>
